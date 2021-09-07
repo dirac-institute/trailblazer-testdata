@@ -1,0 +1,8 @@
+debug: True
+thumbnails:
+  small_root: /home/dino/uni/trailblazer/trailblazer-testdata/media/
+  large_root: /home/dino/uni/trailblazer/trailblazer-testdata/media/
+data_root: /home/dino/uni/trailblazer/trailblazer-testdata/static/upload/fits
+db:
+  engine: django.db.backends.sqlite3
+  name: /home/dino/uni/trailblazer/trailblazer-testdata/db.sqlite3
