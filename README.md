@@ -14,3 +14,9 @@ There are no guarantees the current iteration of the thumbnails, test data or th
 ## Obtaining the test data
 
 The data is stored using [Git LFS](https://git-lfs.github.com/).
+
+## Using the test data
+
+Set the env variable `TRAILBLAZER_CONFIG_DIR` to point to the `config` directory of this package. 
+
+```export TRAILBLAZER_CONFIG_DIR=<local_path>/trailblazer-testdata/config/```
