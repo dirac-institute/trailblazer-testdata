@@ -124,6 +124,8 @@ if __name__ == "__main__":
                     hdulist = reduce_hsc(hdulist)
                 elif f.startswith("c4d"):
                     hdulist = reduce_community_decam(hdulist)
+                elif f.startswith("lbcb") or f.startswith("lbcr"):
+                    hdulist = reduce_lbt(hdulist)
                 else:
                     pass
                 hdulist.writeto(os.path.join(outdir, f), overwrite=True)
