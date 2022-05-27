@@ -21,6 +21,12 @@ def crop_and_shift(hdu, centerpix, crop=200):
     return hdu
 
 
+def reduce_lbt(hdulist):
+    for i in range(1, 5):
+        x, y = hdulist[i].header["NAXIS1"], hdulist[i].header["NAXIS2"]
+        hdulist[i] = crop_and_shift(hdulist[i], (int(x/2), int(y/2)), crop = 100)
+    return hdulist
+
 def reduce_moa(hdulist):
     primary = hdulist[0]
     cr1, cr2 = int(primary.header["NAXIS1"]/2), int(primary.header["NAXIS2"]/2)
@@ -118,6 +124,8 @@ if __name__ == "__main__":
                     hdulist = reduce_hsc(hdulist)
                 elif f.startswith("c4d"):
                     hdulist = reduce_community_decam(hdulist)
+                elif f.startswith("lbcb") or f.startswith("lbcr"):
+                    hdulist = reduce_lbt(hdulist)
                 else:
                     pass
                 hdulist.writeto(os.path.join(outdir, f), overwrite=True)
