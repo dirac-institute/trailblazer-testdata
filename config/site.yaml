@@ -9,3 +9,11 @@ db:
 astrometry_net:
   key:
   timeout: 200
+api_doc:
+  title: "Trailblazer API"
+  version: "v1"
+  description: "Trailblazer backend rest API"
+  contact_email: "changethis@gmail.com"
+  license:
+    name: "MIT License"
+    url: "https://github.com/dirac-institute/trailblazer/blob/main/LICENSE"
